@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: go_api/Dockerfile
+    volumes:
+      - ./go_api:/go/src/app
     container_name: todo-app
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://todo-mysql:3306/todo_db
