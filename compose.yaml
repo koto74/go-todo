@@ -22,8 +22,8 @@ services:
   todo-app:
     platform: linux/x86_64
     build:
-      context: .
-      dockerfile: ./backend/Dockerfile
+      context: ./backend
+      dockerfile: ./Dockerfile
     container_name: todo-app
     environment:
       DB_USERNAME: root

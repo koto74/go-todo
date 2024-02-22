@@ -1,13 +1,12 @@
 FROM golang:latest
 
-RUN mkdir /go/src/app
+RUN mkdir /backend
 
-WORKDIR /go/src/app
+WORKDIR /backend
 
-COPY ./backend/src/* /go/src/app
+COPY src /backend
 
 RUN apt-get update \
-    && go mod init backend \
     && go get github.com/gin-gonic/gin \
     && go get github.com/jinzhu/gorm \
     && go get github.com/go-sql-driver/mysql
