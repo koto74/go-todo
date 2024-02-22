@@ -1,10 +1,10 @@
 FROM golang:latest
 
-RUN mkdir /backend
+RUN mkdir -p /app/backend/src
 
-WORKDIR /backend
+WORKDIR /app/backend/src
 
-COPY src /backend
+COPY src/* /app/backend/src
 
 RUN apt-get update \
     && go get github.com/gin-gonic/gin \
